@@ -1,0 +1,355 @@
+{
+  "theme": "dark_automotive_precision",
+  "archetype": "THE_PERFORMANCE_PRO_LUXURY_HYBRID",
+  "colors": {
+    "palette": {
+      "crimson_blaze": "#DC2626",
+      "crimson_blaze_hover": "#B91C1C",
+      "crimson_glow": "rgba(220, 38, 38, 0.25)",
+      "obsidian_night": "#0B0D11",
+      "surface_carbon": "#12161E",
+      "surface_elevated": "#1A202C",
+      "border_dark": "rgba(255, 255, 255, 0.08)",
+      "border_active": "rgba(220, 38, 38, 0.4)",
+      "pure_white": "#FFFFFF",
+      "text_silver": "#E2E8F0",
+      "text_muted": "#94A3B8"
+    },
+    "surfaces": [
+      {
+        "name": "page",
+        "kind": "solid",
+        "bg": "#0B0D11",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "link": "#DC2626",
+          "error": "#EF4444",
+          "success": "#10B981"
+        }
+      },
+      {
+        "name": "panel",
+        "kind": "solid",
+        "bg": "#12161E",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "link": "#DC2626",
+          "error": "#EF4444",
+          "success": "#10B981"
+        }
+      },
+      {
+        "name": "panel_elevated",
+        "kind": "solid",
+        "bg": "#1A202C",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#CBD5E1",
+        "roles": {
+          "link": "#DC2626",
+          "error": "#EF4444",
+          "success": "#10B981"
+        }
+      },
+      {
+        "name": "hero",
+        "kind": "image",
+        "contrast_against": "#08090C",
+        "guarantee": "scrim: linear-gradient(to right, rgba(11,13,17,0.95) 0%, rgba(11,13,17,0.82) 45%, rgba(11,13,17,0.55) 100%)",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#CBD5E1",
+        "roles": {
+          "link": "#F87171",
+          "error": "#F87171",
+          "success": "#34D399"
+        }
+      },
+      {
+        "name": "glass_header",
+        "kind": "glass",
+        "contrast_against": "#0B0D11",
+        "guarantee": "backdrop-blur-xl bg-[#0B0D11]/90 border-b border-white/10",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#94A3B8",
+        "roles": {
+          "link": "#DC2626"
+        }
+      },
+      {
+        "name": "badge_accent",
+        "kind": "solid",
+        "bg": "rgba(220, 38, 38, 0.15)",
+        "on_bg": "#F87171",
+        "on_bg_muted": "#FCA5A5"
+      },
+      {
+        "name": "badge_neutral",
+        "kind": "solid",
+        "bg": "rgba(255, 255, 255, 0.08)",
+        "on_bg": "#FFFFFF",
+        "on_bg_muted": "#94A3B8"
+      }
+    ],
+    "accent": "#DC2626",
+    "on_accent": "#FFFFFF"
+  },
+  "typography": {
+    "font_heading": "'Space Grotesk Variable', -apple-system, BlinkMacSystemFont, sans-serif",
+    "font_body": "'DM Sans Variable', sans-serif",
+    "scale_px": {
+      "display": 56,
+      "h1": 44,
+      "h2": 32,
+      "h3": 22,
+      "h4": 18,
+      "body": 16,
+      "caption": 14
+    },
+    "rules": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white",
+      "h3": "text-xl sm:text-2xl font-semibold text-white tracking-normal",
+      "h4": "text-lg sm:text-xl font-semibold text-white",
+      "body": "text-base text-slate-300 leading-relaxed",
+      "caption": "text-sm text-slate-400 font-medium tracking-wide uppercase",
+      "tracking_labels": "tracking-[0.18em]"
+    }
+  },
+  "entry_surfaces": {
+    "/": "split hero with strong brand typography, badge, trust signals, CTA cluster left, high-impact automotive workshop image right"
+  },
+  "business_info": {
+    "name": "Marcala Auto Body",
+    "tagline": "Quality Auto Body Repair You Can Trust",
+    "location": "Charlotte, North Carolina",
+    "address": "6401 N Tryon St Suite B, Charlotte, NC 28213",
+    "phone": "(704) 555-0199",
+    "email": "contact@marcalaautobody.com",
+    "hours": {
+      "mon_fri": "Mon - Fri: 9:00 AM - 6:00 PM",
+      "sat": "Sat: 9:00 AM - 4:00 PM",
+      "sun": "Sun: Closed"
+    },
+    "coords": {
+      "lat": 35.2676,
+      "lng": -80.7719
+    }
+  },
+  "services_data": [
+    {
+      "id": "collision-repair",
+      "title": "Collision Repair",
+      "category": "Structural & Safety",
+      "description": "Comprehensive structural realignment and body rebuilding after major or minor collisions, restored to OEM factory specifications.",
+      "badge": "Core Specialty",
+      "icon": "ShieldAlert"
+    },
+    {
+      "id": "auto-body-repair",
+      "title": "Auto Body Repair",
+      "category": "Body Work",
+      "description": "Full-spectrum metalwork, panel straightening, and seamless structural restoration for all makes and models.",
+      "badge": "Full Service",
+      "icon": "Wrench"
+    },
+    {
+      "id": "dent-repair",
+      "title": "Dent Repair",
+      "category": "Precision Removal",
+      "description": "Advanced paintless dent repair (PDR) and conventional dent pulling to eliminate door dings, creases, and hail damage.",
+      "badge": "PDR Available",
+      "icon": "Hammer"
+    },
+    {
+      "id": "bumper-repair",
+      "title": "Bumper Repair",
+      "category": "Front & Rear",
+      "description": "Plastic welding, crack repair, dent reshaping, and complete bumper replacement and color-matched refinishing.",
+      "badge": "Fast Turnaround",
+      "icon": "Car"
+    },
+    {
+      "id": "fender-repair",
+      "title": "Fender Repair",
+      "category": "Panel Alignment",
+      "description": "Restoration and realignment of bent or crushed fenders, quarter panels, and wheel wells with tight seam gaps.",
+      "badge": "OEM Precision",
+      "icon": "Cpu"
+    },
+    {
+      "id": "automotive-painting",
+      "title": "Automotive Painting",
+      "category": "Down-Draft Booth",
+      "description": "Climate-controlled down-draft spray booth finishes with premium multi-stage polyurethane clear coats for a showroom mirror gloss.",
+      "badge": "Lifetime Warranty",
+      "icon": "Paintbrush"
+    },
+    {
+      "id": "paint-matching",
+      "title": "Paint Matching",
+      "category": "Spectrophotometer",
+      "description": "Computerized spectrophotometer digital color matching ensuring 100% invisible panel blending and exact factory tones.",
+      "badge": "Digital Scanner",
+      "icon": "Sparkles"
+    },
+    {
+      "id": "scratch-repair",
+      "title": "Scratch Repair",
+      "category": "Surface Refinishing",
+      "description": "Wet sanding, compound buffing, clear-coat blending, and deep key scratch elimination for flawless reflections.",
+      "badge": "Precision Buff",
+      "icon": "Layers"
+    },
+    {
+      "id": "color-changes",
+      "title": "Color Changes",
+      "category": "Custom Refinish",
+      "description": "Complete vehicle color conversions, custom metallic finishes, matte clear coats, and accent paint designs.",
+      "badge": "Custom Finish",
+      "icon": "Palette"
+    },
+    {
+      "id": "insurance-claim-assistance",
+      "title": "Insurance Claim Assistance",
+      "category": "Claims Support",
+      "description": "Hassle-free direct coordination with all major insurance carriers, itemized digital estimates, and supplement processing.",
+      "badge": "Zero Hassle",
+      "icon": "FileCheck"
+    }
+  ],
+  "image_urls": {
+    "hero_banner": {
+      "url": "https://images.unsplash.com/photo-1781627153852-7458476debb3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwxfHxjYXIlMjBzcHJheSUyMHBhaW50JTIwYXV0b21vdGl2ZSUyMHdvcmtzaG9wfGVufDB8fHx8MTc5MDYwNTcwNXww&ixlib=rb-4.1.0&q=85",
+      "description": "Deep red sports car in high-end automotive workshop with precision equipment",
+      "category": "hero",
+      "placement": "Hero background / visual focal panel"
+    },
+    "paint_booth": {
+      "url": "https://images.unsplash.com/photo-1666009387246-65e8ad8e7103?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NjV8MHwxfHNlYXJjaHwyfHxhdXRvJTIwYm9keSUyMHJlcGFpciUyMGNvbGxpc2lvbiUyMGNhciUyMHBhaW50aW5nfGVufDB8fHx8MTc5MDYwNTcwNXww&ixlib=rb-4.1.0&q=85",
+      "description": "Certified technician in spray booth applying precision automotive paint",
+      "category": "services",
+      "placement": "Automotive painting service highlight & About section"
+    },
+    "workshop_prep": {
+      "url": "https://images.unsplash.com/photo-1786489785778-a163f38b7c87?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHw0fHxjYXIlMjBzcHJheSUyMHBhaW50JTIwYXV0b21vdGl2ZSUyMHdvcmtzaG9wfGVufDB8fHx8MTc5MDYwNTcwNXww&ixlib=rb-4.1.0&q=85",
+      "description": "Technician precision sanding and prepping bumper panel for paint",
+      "category": "about",
+      "placement": "Craftsmanship & About story visual"
+    },
+    "lift_shop": {
+      "url": "https://images.unsplash.com/photo-1618312980096-873bd19759a0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1MDZ8MHwxfHNlYXJjaHwxfHxtZWNoYW5pYyUyMGNhciUyMHJlcGFpciUyMGF1dG9tb3RpdmUlMjBzaG9wfGVufDB8fHx8MTc5MDYwNTcwNXww&ixlib=rb-4.1.0&q=85",
+      "description": "Red sports car on hydraulic lift in clean garage workshop",
+      "category": "facility",
+      "placement": "Facility tour / Our Work background accent"
+    }
+  },
+  "before_after_specs": {
+    "interactive_slider": true,
+    "clear_placeholder_labeling": "MARKED PLACEHOLDER: Real shop photos will replace these placeholders upon completion of the next client vehicle cycle.",
+    "cases": [
+      {
+        "id": "case-1",
+        "title": "2023 Luxury Sedan - Front Quarter Collision",
+        "service": "Collision & Fender Realignment",
+        "damage_desc": "Heavy crush damage across driver-side fender, cracked bumper cover, damaged headlight assembly and misaligned hood seam.",
+        "repair_desc": "Full OEM frame measurement, replacement front fender, reinforced bumper welded & matched, multi-stage 3-coat paint blended into door."
+      },
+      {
+        "id": "case-2",
+        "title": "2022 SUV - Rear Bumper & Tailgate Impact",
+        "service": "Bumper Repair & Paint Matching",
+        "damage_desc": "Creased tailgate skin, deeply gouged polyurethane bumper cover, fractured reverse sensors.",
+        "repair_desc": "Plastic weld reconstruction, ultrasonic sensor recalibration, spectrophotometer metallic paint match, lifetime clear coat."
+      },
+      {
+        "id": "case-3",
+        "title": "2024 Sports Coupe - Key Scratch & Door Crease",
+        "service": "Scratch Repair & Dent Removal",
+        "damage_desc": "18-inch deep key scratch penetrating clear and basecoat across passenger door with subtle metal crease.",
+        "repair_desc": "Paintless dent manipulation followed by feather-edge micro-sanding, precision airbrush tinting, and baked infrared cure."
+      }
+    ]
+  },
+  "component_structure": {
+    "Navbar": "Sticky header with crystal blur backdrop, red accent brand badge, desktop menu links with smooth anchor scroll, and high-visibility 'Request an Estimate' and 'Call Now' buttons.",
+    "Hero": "Asymmetric hero with bold heading 'Quality Auto Body Repair You Can Trust', badge for Charlotte NC, quick guarantee badges (OEM Certified Specs, Lifetime Paint Warranty, Direct Insurance Billing), primary CTAs ('Request an Estimate' scroll/modal, 'Call Now' tel link), and interactive quick stats.",
+    "ServicesGrid": "10-card structured grid with category tags, custom automotive icons, crisp borders, and hover micro-animations with crimson glow borders.",
+    "BeforeAfterSection": "Interactive Before/After comparison slider component with draggable divider or toggle view, clearly marked with placeholder badges and detailed repair breakdowns.",
+    "OurWorkGallery": "Curated automotive gallery layout with filter tabs (All, Collision, Paint & Color, Dents & Scratches, Bumpers) with clearly marked placeholder badges.",
+    "EstimateForm": "Comprehensive interactive lead capture form with instant validation: Name, Phone, Email, Vehicle Year, Make, Model, Damage Type selector, Description of Damage, and drag-and-drop Photo Upload preview (with file size/format indicators). Direct API submission to FastAPI backend /api/estimates.",
+    "AboutSection": "Deep-dive automotive craftsmanship narrative: 4 pillars (Quality Repairs, Attention to Detail, Honest Communication, Customer Satisfaction), shop credential stats, and step-by-step repair process pipeline.",
+    "ReviewsSection": "Legitimate placeholder review cards highlighting Google / Customer feedback format (clearly stating placeholder customer stories ready for real sync, no invented names passed off as live).",
+    "ContactSection": "Complete contact hub with direct phone click-to-call, physical address at 6401 N Tryon St Suite B, Charlotte, NC 28213, operating hours table, live Open/Closed badge based on current time, interactive mock map with direct Google Maps route button, and quick question messenger."
+  },
+  "interactive_enhancers": {
+    "toast_notifications": "Sonner alerts on estimate submission and copy phone/address actions.",
+    "estimate_calculator_preview": "Interactive damage severity estimator giving instant helpful timelines before submission.",
+    "hours_status_badge": "Dynamic real-time badge calculating whether Marcala Auto Body is currently OPEN or CLOSED based on Eastern Time.",
+    "call_now_mobile_bar": "Sticky bottom bar on mobile screens with instant one-tap 'Call Shop' and 'Get Estimate' buttons."
+  },
+  "data_testid_manifest": [
+    "nav-logo",
+    "nav-link-services",
+    "nav-link-about",
+    "nav-link-our-work",
+    "nav-link-reviews",
+    "nav-link-estimate",
+    "nav-link-contact",
+    "nav-cta-estimate",
+    "nav-cta-call",
+    "hero-heading",
+    "hero-cta-estimate",
+    "hero-cta-call",
+    "services-grid",
+    "service-card-collision-repair",
+    "service-card-automotive-painting",
+    "service-card-paint-matching",
+    "service-card-dent-repair",
+    "service-card-bumper-repair",
+    "before-after-container",
+    "before-after-slider",
+    "gallery-filter-all",
+    "gallery-filter-collision",
+    "gallery-filter-paint",
+    "estimate-form",
+    "estimate-input-name",
+    "estimate-input-phone",
+    "estimate-input-email",
+    "estimate-input-year",
+    "estimate-input-make",
+    "estimate-input-model",
+    "estimate-select-damage-type",
+    "estimate-textarea-description",
+    "estimate-file-upload",
+    "estimate-submit-button",
+    "estimate-success-message",
+    "reviews-section",
+    "contact-phone-link",
+    "contact-address-text",
+    "contact-hours-table",
+    "contact-map-container",
+    "mobile-sticky-call-btn",
+    "mobile-sticky-estimate-btn"
+  ],
+  "instructions_to_main_agent": [
+    "Implement the single-page application with smooth scrolling anchor navigation linking Home, Services, About, Our Work, Reviews, Estimate, and Contact.",
+    "Follow the red and black aesthetic with obsidian background (#0B0D11), elevated carbon panels (#12161E), and vibrant crimson red (#DC2626) accents.",
+    "In `frontend/src/index.css`, import `@fontsource-variable/space-grotesk` for headings and `@fontsource-variable/dm-sans` for body copy.",
+    "Ensure all 10 requested services are rendered with distinct descriptions and category tags.",
+    "Implement the interactive Before/After comparison tool with interactive drag handle or slider.",
+    "Connect the Estimate Request form to a FastAPI endpoint `POST /api/estimates` in `backend/routers/estimates.py` (or `server.py`) and store submissions in MongoDB collection `estimates`.",
+    "Include simulated photo upload preview (allowing users to drop/select image files and see thumbnail previews).",
+    "Provide clear, professional placeholder tags for the Work Gallery and Reviews sections as requested.",
+    "Ensure the contact section displays the exact address: 6401 N Tryon St Suite B, Charlotte, NC 28213 and hours (Mon-Fri 9am-6pm, Sat 9am-4pm, Sun closed).",
+    "Implement mobile-first responsiveness with a fixed quick-call bar on small viewports.",
+    "Add `data-testid` to all interactive buttons, inputs, links, and key cards as defined in data_testid_manifest."
+  ],
+  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
+    "Do not use generic SaaS blue or default template spacing. Use high-contrast carbon and crimson.",
+    "Never use AI robot emojis for icons; use Lucide-react icons exclusively.",
+    "Use generous padding (py-20 to py-28 for main sections) to prevent cramped automotive layouts.",
+    "All form fields must use custom styled input/select components with visible focus rings in crimson.",
+    "Use Sonner for toast confirmations on estimate submissions and action buttons."
+  ]
+}
