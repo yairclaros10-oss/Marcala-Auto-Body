@@ -3,12 +3,12 @@
 ## Original Problem Statement
 Professional, modern website for Marcala Auto Body, an auto body & collision repair shop in Charlotte, NC. Premium red/black/white/dark-gray automotive design, fast, clean, mobile-friendly. Homepage hero "Quality Auto Body Repair You Can Trust." with Request an Estimate + Call Now buttons; 10 service cards (collision, body, dent, bumper, fender, painting, paint matching, scratch, color changes, insurance claims); About section; Our Work gallery with before/after; estimate request form (name, phone, email, year, make, model, damage description, photo upload); Reviews section with placeholders (no invented reviews); Contact with verified phone/address/hours/map/Call Now; local SEO (titles, meta, headings, local business info); nav: Home | Services | About | Our Work | Reviews | Request an Estimate | Contact; responsive + subtle animations. No made-up business info — verified info or clearly marked placeholders. Sources: Birdeye profile + Facebook page.
 
-## Verified Business Info (sources: Birdeye profile, MapQuest/local directories)
-- Address: 6401 N Tryon St Suite B, Charlotte, NC 28213 (Birdeye + NC Secretary of State)
-- Hours: Mon–Fri 9:00 AM–6:00 PM, Sat 9:00 AM–4:00 PM, Sun Closed (Birdeye)
-- Rating: 4.2 from 18 Google reviews (Birdeye)
-- Phone: (704) 840-0725 — found via MapQuest + localitybiz directories; OWNER SHOULD CONFIRM before launch
-- Email: not verified — intentionally omitted from the site
+## Verified Business Info (sources: Google Business Profile via user-provided link, Chamber of Commerce, Birdeye)
+- Address: 2601 S Tryon St, Charlotte, NC 28203 (current Google listing; older directories list 6401 N Tryon St Suite B and 513 W 24th St — shop has moved; OWNER SHOULD CONFIRM current location)
+- Phone: (704) 840-0725 (consistent across Google, Chamber, MapQuest)
+- Email: collisionmarcalaauto@gmail.com (provided by owner 2026-09-29)
+- Hours: Mon–Fri 9:00 AM–6:00 PM, Sat 9:00 AM–4:00 PM, Sun Closed
+- Rating: 4.5 from 24 Google reviews (Google listing, Sep 2026)
 
 ## User Personas
 - Local driver with collision/dent/scratch damage wanting a fast free estimate
@@ -29,10 +29,16 @@ Professional, modern website for Marcala Auto Body, an auto body & collision rep
 - Local SEO meta + JSON-LD structured data targeting "auto body shop Charlotte NC" etc.
 - All interactive elements carry data-testids
 
+## Implemented (2026-09-29)
+- Added shop email collisionmarcalaauto@gmail.com to Contact section, Footer, and JSON-LD
+- Replaced review placeholders with 4 real Google reviews (Elin Santos, Local Client, Beans Book of Rod Shops, Faizan Zeb) sourced via the Google listing the owner shared + Chamber of Commerce mirror; aggregate updated to 4.5/24 per current Google listing
+- Updated address site-wide (Contact, Footer, About, map embed, directions, JSON-LD) to 2601 S Tryon St, Charlotte, NC 28203 per the current Google Business Profile
+- Domain request answered: Emergent preview/deploy subdomains are not customizable; a custom domain (e.g. marcala-auto-body.com) can be connected after publishing via Manage Publishes → Domain tab (auto-link or buy through Emergent)
+
 ## Backlog
-- P0: Owner confirms phone number (704) 840-0725; replace placeholder gallery/before-after imagery with real shop photos; connect real Google reviews to the Reviews section
-- P1: Admin view/login for reviewing submitted estimates (GET /api/estimates is currently unauthenticated); email/SMS notification to the shop on new estimate (Resend/Twilio); delete test submissions from the DB before launch
-- P2: Real customer review sync (Google Places API), Spanish-language toggle (shop has Spanish-speaking customers), blog/FAQ for SEO, sitemap.xml + robots.txt, custom domain
+- P0: Owner confirms current address (Google listing shows 2601 S Tryon St; older directories show 6401 N Tryon St Suite B) — site currently uses 2601 S Tryon St; replace placeholder gallery/before-after imagery with real shop photos
+- P1: Admin view/login for reviewing submitted estimates (GET /api/estimates is currently unauthenticated); email notification to collisionmarcalaauto@gmail.com on new estimate (Resend); delete test submissions from the DB before launch; connect custom domain after publishing
+- P2: Auto-sync Google reviews (Places API), Spanish-language toggle (shop has Spanish-speaking customers — "Se Habla Español" on Facebook), blog/FAQ for SEO, sitemap.xml + robots.txt
 
 ## Next Tasks
 1. Confirm phone + hours with owner, swap in real photos

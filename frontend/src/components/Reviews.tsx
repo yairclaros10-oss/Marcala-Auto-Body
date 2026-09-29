@@ -1,6 +1,38 @@
 import { ExternalLink, Quote, Star } from "lucide-react";
 import { BUSINESS } from "@/lib/site";
 
+interface Review {
+  name: string;
+  date: string;
+  text: string;
+  verifiedFiveStar?: boolean;
+}
+
+// Real customer reviews sourced from the shop's public Google profile.
+const REVIEWS: Review[] = [
+  {
+    name: "Elin Santos",
+    date: "April 2026",
+    text: "I recently got my truck painted by this awesome company, who also fixed some dents on one of my doors. You can't even tell someone hit my car after they fixed it. I changed the entire color of my vehicle from white to black. It looks awesome, I love the way it turned out.",
+  },
+  {
+    name: "Local Client",
+    date: "December 2025",
+    text: "They are the best in the city, top quality and outstanding service. I took my 2023 Tesla Model Y and it looks brand new. They did an amazing job. I highly recommend them.",
+  },
+  {
+    name: "Beans Book of Rod Shops",
+    date: "April 2025",
+    text: "Took my 2012 Genesis sedan with rear fender damage here to be repaired. As Marco assessed the damage, I decided to have them paint it as well. He did a complete color change including door jambs and under the hood. The car was ready very fast and he did a great job both on the damage and the paint.",
+    verifiedFiveStar: true,
+  },
+  {
+    name: "Faizan Zeb",
+    date: "January 2026",
+    text: "They are the best in body shop.",
+  },
+];
+
 export default function Reviews() {
   return (
     <section id="reviews" data-testid="reviews-section" className="border-t border-white/5 bg-[#0B0D11] py-20 lg:py-28">
@@ -35,45 +67,43 @@ export default function Reviews() {
                 data-testid="reviews-external-link"
                 className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#F87171] transition-colors hover:text-white"
               >
-                Read reviews on our public profile
+                Read all reviews on Google
                 <ExternalLink className="h-3.5 w-3.5" />
               </a>
             </div>
           </div>
 
-          <div className="grid gap-5 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-2">
-            {[1, 2].map((n) => (
-              <div
-                key={n}
-                data-testid={`review-placeholder-${n}`}
-                className="flex flex-col justify-between rounded-xl border border-dashed border-white/20 bg-[#12161E]/60 p-6"
+          <div className="grid gap-5 sm:grid-cols-2 lg:col-span-2">
+            {REVIEWS.map((review, i) => (
+              <article
+                key={review.name}
+                data-testid={`review-card-${i + 1}`}
+                className="flex flex-col justify-between rounded-xl border border-white/10 bg-[#12161E] p-6 transition-colors hover:border-[#DC2626]/40"
               >
                 <div>
-                  <Quote className="h-6 w-6 text-[#DC2626]/50" />
-                  <p className="mt-4 text-sm font-semibold uppercase tracking-wider text-slate-500">
-                    Review placeholder
-                  </p>
-                  <p className="mt-3 text-sm leading-relaxed text-slate-400">
-                    This space is reserved for a real customer review. We do not publish made-up
-                    testimonials — genuine feedback from Marcala Auto Body customers will appear
-                    here once reviews are connected.
-                  </p>
+                  <div className="flex items-center justify-between">
+                    <Quote className="h-6 w-6 text-[#DC2626]/60" />
+                    {review.verifiedFiveStar && (
+                      <span className="flex items-center gap-0.5" aria-label="5 out of 5 stars">
+                        {Array.from({ length: 5 }).map((_, s) => (
+                          <Star key={s} className="h-3.5 w-3.5 fill-[#DC2626] text-[#DC2626]" />
+                        ))}
+                      </span>
+                    )}
+                  </div>
+                  <p className="mt-4 text-sm leading-relaxed text-slate-300">“{review.text}”</p>
                 </div>
-                <p className="mt-6 text-xs font-medium text-slate-500">
-                  — Real customer name & rating will display here
-                </p>
-              </div>
+                <div className="mt-6 flex items-center justify-between border-t border-white/5 pt-4">
+                  <div>
+                    <p className="text-sm font-semibold text-white">{review.name}</p>
+                    <p className="text-xs text-slate-500">{review.date}</p>
+                  </div>
+                  <span className="rounded-full bg-white/5 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                    Google review
+                  </span>
+                </div>
+              </article>
             ))}
-            <div className="flex items-center justify-center rounded-xl border border-dashed border-white/20 bg-[#12161E]/60 p-6 text-center sm:col-span-2">
-              <p className="max-w-md text-sm leading-relaxed text-slate-400">
-                Had work done at Marcala Auto Body? Your honest review could be featured here.
-                Call us at{" "}
-                <a href={BUSINESS.phoneTel} className="font-semibold text-[#F87171] hover:text-white">
-                  {BUSINESS.phoneDisplay}
-                </a>{" "}
-                or leave a review on Google.
-              </p>
-            </div>
           </div>
         </div>
       </div>

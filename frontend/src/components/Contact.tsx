@@ -1,4 +1,4 @@
-import { Clock, MapPin, Navigation, Phone } from "lucide-react";
+import { Clock, Mail, MapPin, Navigation, Phone } from "lucide-react";
 import { BUSINESS, HOURS, isOpenNow } from "@/lib/site";
 
 export default function Contact() {
@@ -12,7 +12,7 @@ export default function Contact() {
             Contact
           </p>
           <h2 className="font-heading mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
-            Visit the Shop on North Tryon Street
+            Visit the Shop on South Tryon Street
           </h2>
           <p className="mt-4 text-base leading-relaxed text-slate-400">
             Stop by for a free in-person estimate, or give us a call — we are happy to answer
@@ -73,6 +73,26 @@ export default function Contact() {
                 <Navigation className="h-4 w-4 text-[#DC2626]" />
                 Directions
               </a>
+            </div>
+
+            <div className="flex items-center justify-between gap-4 rounded-xl border border-white/10 bg-[#12161E] p-6">
+              <div className="flex min-w-0 items-center gap-4">
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-[#DC2626]/12 text-[#F87171]">
+                  <Mail className="h-6 w-6" />
+                </span>
+                <div className="min-w-0">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+                    Email us
+                  </p>
+                  <a
+                    href={`mailto:${BUSINESS.email}`}
+                    data-testid="contact-email-link"
+                    className="break-all text-base font-semibold text-white transition-colors hover:text-[#F87171]"
+                  >
+                    {BUSINESS.email}
+                  </a>
+                </div>
+              </div>
             </div>
 
             <div className="rounded-xl border border-white/10 bg-[#12161E] p-6">

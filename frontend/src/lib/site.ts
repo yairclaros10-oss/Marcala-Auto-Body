@@ -3,14 +3,16 @@ export const BUSINESS = {
   tagline: "Quality Auto Body Repair You Can Trust.",
   phoneDisplay: "(704) 840-0725",
   phoneTel: "tel:+17048400725",
-  address: "6401 N Tryon St Suite B, Charlotte, NC 28213",
+  email: "collisionmarcalaauto@gmail.com",
+  address: "2601 S Tryon St, Charlotte, NC 28203",
   mapsDirectionsUrl:
-    "https://www.google.com/maps/dir/?api=1&destination=Marcala+Auto+Body,+6401+N+Tryon+St+Suite+B,+Charlotte,+NC+28213",
+    "https://www.google.com/maps/dir/?api=1&destination=Marcala+Auto+Body,+2601+S+Tryon+St,+Charlotte,+NC+28203",
   mapEmbedUrl:
-    "https://www.google.com/maps?q=Marcala+Auto+Body,+6401+N+Tryon+St+Suite+B,+Charlotte,+NC+28213&output=embed",
-  reviewsUrl: "https://reviews.birdeye.com/marcala-auto-body-167591823361205",
-  rating: "4.2",
-  reviewCount: 18,
+    "https://www.google.com/maps?q=Marcala+Auto+Body,+2601+S+Tryon+St,+Charlotte,+NC+28203&output=embed",
+  reviewsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Marcala+Auto+body+2601+S+Tryon+St+Charlotte+NC+28203",
+  rating: "4.5",
+  reviewCount: 24,
 };
 
 export const HOURS = [

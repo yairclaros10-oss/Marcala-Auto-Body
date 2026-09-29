@@ -59,7 +59,7 @@ export default function About() {
               A Charlotte Body Shop That Sweats the Details
             </h2>
             <p className="mt-5 text-base leading-relaxed text-slate-300">
-              Located on North Tryon Street, Marcala Auto Body has built its name the
+              Located on South Tryon Street, Marcala Auto Body has built its name the
               old-fashioned way — one properly repaired vehicle at a time. Whether it is a full
               collision rebuild, a color change, or a scratch you cannot stop staring at, the
               standard never changes: the repair should be invisible.
