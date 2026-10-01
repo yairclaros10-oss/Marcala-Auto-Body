@@ -219,6 +219,7 @@ const en = {
       { title: "Cut, Buff & Polish Finish", category: "dents" },
       { title: "Bumper & Quarter Damage Intake", category: "bumpers" },
       { title: "Hand-Finished Paintwork", category: "paint" },
+      { title: "Quarter Panel Body Work in Progress", category: "collision" },
     ],
   },
   reviews: {
@@ -543,6 +544,7 @@ const es: Dict = {
       { title: "Acabado de Corte y Pulido", category: "dents" },
       { title: "Recepción de Daño en Defensa y Lateral", category: "bumpers" },
       { title: "Pintura Terminada a Mano", category: "paint" },
+      { title: "Trabajo de Panel Lateral en Proceso", category: "collision" },
     ],
   },
   reviews: {

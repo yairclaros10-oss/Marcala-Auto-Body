@@ -22,6 +22,7 @@ const WORK_IMAGES = [
   "https://images.unsplash.com/photo-1620584898989-d39f7f9ed1b7?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHwyfHxwb2xpc2hlZCUyMGx1eHVyeSUyMGNhciUyMHBhaW50JTIwZGV0YWlsJTIwc2hpbmV8ZW58MHx8fHwxNzkwNjA1Nzg4fDA&ixlib=rb-4.1.0&q=85",
   "https://images.unsplash.com/photo-1692119439873-7a4be83beeea?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHxkYW1hZ2VkJTIwY2FyJTIwZGVudCUyMHNjcmF0Y2glMjBjbG9zZXVwfGVufDB8fHx8MTc5MDYwNTc4OHww&ixlib=rb-4.1.0&q=85",
   "https://images.unsplash.com/photo-1708805282706-f44730b7e527?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHw0fHxwb2xpc2hlZCUyMGx1eHVyeSUyMGNhciUyMHBhaW50JTIwZGV0YWlsJTIwc2hpbmV8ZW58MHx8fHwxNzkwNjA1Nzg4fDA&ixlib=rb-4.1.0&q=85",
+  "/work/gallery-quarter-panel.jpg",
 ];
 
 export default function Gallery() {
@@ -78,9 +79,11 @@ export default function Gallery() {
                 className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0B0D11]/90 via-transparent to-transparent" />
-              <span className="absolute left-3 top-3 rounded-sm bg-black/70 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-slate-300">
-                {t.gallery.placeholderBadge}
-              </span>
+              {!item.image.startsWith("/work/") && (
+                <span className="absolute left-3 top-3 rounded-sm bg-black/70 px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-slate-300">
+                  {t.gallery.placeholderBadge}
+                </span>
+              )}
               <figcaption className="absolute bottom-0 left-0 right-0 p-4">
                 <p className="text-[11px] font-semibold uppercase tracking-wider text-[#F87171]">
                   {t.gallery.filters[item.category as FilterKey]}
