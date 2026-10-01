@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Info } from "lucide-react";
+import Reveal from "@/components/Reveal";
 import { useLang } from "@/lib/i18n";
 
 type FilterKey = "all" | "collision" | "paint" | "dents" | "bumpers";
@@ -67,11 +68,9 @@ export default function Gallery() {
         </div>
 
         <div data-testid="work-gallery-grid" className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {items.map((item) => (
-            <figure
-              key={item.title}
-              className="group relative overflow-hidden rounded-lg border border-white/10"
-            >
+          {items.map((item, i) => (
+            <Reveal key={item.title} delay={(i % 4) * 0.06}>
+              <figure className="group relative overflow-hidden rounded-lg border border-white/10">
               <img
                 src={item.image}
                 alt={`${item.title}${t.gallery.altSuffix}`}
@@ -88,7 +87,8 @@ export default function Gallery() {
                 </p>
                 <p className="mt-1 text-sm font-semibold text-white">{item.title}</p>
               </figcaption>
-            </figure>
+              </figure>
+            </Reveal>
           ))}
         </div>
       </div>

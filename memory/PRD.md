@@ -40,6 +40,11 @@ Professional, modern website for Marcala Auto Body, an auto body & collision rep
 - Replaced placeholder branding with the owner's uploaded logo: transparent-background `public/logo.png` in header + footer, favicons (16/32/180) generated from the car artwork, og:image + twitter card meta updated
 - Case 1 of the before/after slider now uses real shop photos (owner-uploaded Honda S2000 front-end rebuild: `public/work/case1-before.jpg` stripped front clip, `case1-after.jpg` finished) with "Real repair" note in EN/ES; cases 2–3 remain marked placeholders; fixed slow-decoding 12MP Unsplash images (added w=1600 params + keyed img elements)
 
+## Implemented (2026-10-01, part 2)
+- Estimate notifications: every submission emails full details + photo links to collisionmarcalaauto@gmail.com via the Emergent managed email integration (verified 202 Accepted on live submissions; guardrail gate `_assert_safe_email` on every send; reply-to set to the shop inbox). SMS to (704) 840-0725 is pre-wired via Twilio — activates automatically once TWILIO_ACCOUNT_SID / TWILIO_AUTH_TOKEN / TWILIO_FROM_NUMBER are filled in backend/.env (currently logs "skipped" until then)
+- Motion upgrade: Lenis momentum scrolling with anchor offset handling, kinetic masked line-by-line hero reveal + image clip reveal + scroll parallax (motion/react), staggered scroll-reveals on services/gallery via Reveal component, slow editorial services marquee between hero and services
+- Note: DB now holds several test estimates (Test Customer, Browser Test, Prueba Español, Notify Test, Local Test, P1/P2/P3) — clear before launch
+
 ## Backlog
 - P0: Owner confirms current address (Google listing shows 2601 S Tryon St; older directories show 6401 N Tryon St Suite B) — site currently uses 2601 S Tryon St; replace placeholder gallery/before-after imagery with real shop photos
 - P1: Admin view/login for reviewing submitted estimates (GET /api/estimates is currently unauthenticated); email notification to collisionmarcalaauto@gmail.com on new estimate (Resend); delete test submissions from the DB before launch; connect custom domain after publishing

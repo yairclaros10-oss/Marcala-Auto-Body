@@ -127,7 +127,6 @@
     }
   html {
     @apply font-sans;
-    scroll-behavior: smooth;
     }
   ::selection {
     background-color: rgba(220, 38, 38, 0.85);
@@ -152,3 +151,16 @@
 .rise-in-2 { animation-delay: 0.16s; }
 .rise-in-3 { animation-delay: 0.24s; }
 .rise-in-4 { animation-delay: 0.32s; }
+
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+    animation: marquee 55s linear infinite;
+}
+
+.marquee-track:hover {
+    animation-play-state: paused;
+}
