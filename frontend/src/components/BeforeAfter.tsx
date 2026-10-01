@@ -7,11 +7,9 @@ import { useLang } from "@/lib/i18n";
 const CASE_MEDIA = [
   { before: "/work/case1-before.jpg", after: "/work/case1-after.jpg", real: true },
   {
-    before:
-      "https://images.unsplash.com/photo-1703609438732-2fad53e62a4b?crop=entropy&cs=srgb&fm=jpg&w=1600&q=80&auto=format&ixlib=rb-4.1.0",
-    after:
-      "https://images.unsplash.com/photo-1703609438732-2fad53e62a4b?crop=entropy&cs=srgb&fm=jpg&w=1600&q=80&auto=format&ixlib=rb-4.1.0",
-    real: false,
+    before: "/work/case2-before.jpg",
+    after: "/work/case2-after.jpg",
+    real: true,
   },
   {
     before:

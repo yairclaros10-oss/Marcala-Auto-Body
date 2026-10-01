@@ -115,7 +115,7 @@ const en = {
     afterLabel: "After — Placeholder",
     beforeRealLabel: "Before",
     afterRealLabel: "After",
-    realNote: "Real repair — this Honda S2000's front end was rebuilt and refinished right here at Marcala Auto Body. More real shop photos are on the way.",
+    realNote: "Real repair — this vehicle was rebuilt and refinished right here at Marcala Auto Body. More real shop photos are on the way.",
     sliderAria: "Drag to compare before and after",
     beforeAlt: "before repair (placeholder photo)",
     afterAlt: "after repair (placeholder photo)",
@@ -133,12 +133,12 @@ const en = {
           "Complete front-end reassembly with refinished panels, fresh black paint and clear coat, restored lighting, and a final cut-and-buff detail.",
       },
       {
-        title: "Rear Bumper & Panel Impact",
-        service: "Bumper Repair & Paint Matching",
+        title: "Pickup Truck — Full Repaint & Reassembly",
+        service: "Automotive Painting & Body Work",
         damage:
-          "Gouged bumper cover and creased panel skin with paint transfer and fractured surface coating.",
+          "Truck fully torn down for a complete refinish — wheels, trim and hardware off, panels prepped for the booth.",
         repair:
-          "Plastic weld reconstruction, computerized metallic paint match, and a fresh clear coat for a uniform factory shine.",
+          "Complete black respray with fresh clear coat, machine cut and buff, then full reassembly — wheels, lights and trim back on.",
       },
       {
         title: "Deep Scratch & Door Crease",
@@ -439,7 +439,7 @@ const es: Dict = {
     afterLabel: "Después — Ejemplo",
     beforeRealLabel: "Antes",
     afterRealLabel: "Después",
-    realNote: "Reparación real — el frente de este Honda S2000 fue reconstruido y repintado aquí mismo en Marcala Auto Body. Más fotos reales del taller próximamente.",
+    realNote: "Reparación real — este vehículo fue reconstruido y repintado aquí mismo en Marcala Auto Body. Más fotos reales del taller próximamente.",
     sliderAria: "Arrastre para comparar antes y después",
     beforeAlt: "antes de la reparación (foto de ejemplo)",
     afterAlt: "después de la reparación (foto de ejemplo)",
@@ -457,12 +457,12 @@ const es: Dict = {
           "Reensamblaje completo del frente con paneles repintados, pintura negra nueva con capa transparente, iluminación restaurada y detallado final de corte y pulido.",
       },
       {
-        title: "Impacto en Defensa Trasera y Panel",
-        service: "Reparación de Defensa e Igualación de Pintura",
+        title: "Camioneta — Repintado Completo y Reensamblaje",
+        service: "Pintura Automotriz y Trabajo de Carrocería",
         damage:
-          "Defensa con ranuras profundas y piel de panel arrugada con transferencia de pintura y recubrimiento fracturado.",
+          "Camioneta completamente desarmada para un repintado total — rines, molduras y herrajes removidos, paneles preparados para la cabina.",
         repair:
-          "Reconstrucción con soldadura de plástico, igualación computarizada de pintura metálica y una nueva capa transparente para un brillo uniforme de fábrica.",
+          "Repintado negro completo con capa transparente nueva, corte y pulido a máquina, y reensamblaje total — rines, luces y molduras instaladas.",
       },
       {
         title: "Rayón Profundo y Pliegue en Puerta",
