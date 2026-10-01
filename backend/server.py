@@ -46,6 +46,31 @@ EMAIL_KEY = os.environ.get("EMERGENT_EMAIL_KEY")
 EMAIL_FROM_NAME = os.environ.get("EMAIL_FROM_NAME", "Marcala Auto Body")
 EMAIL_REPLY_TO = os.environ.get("EMAIL_REPLY_TO")
 
+SHOP_PHONE_1 = "(704) 840-0725"
+SHOP_PHONE_2 = "(516) 234-8027"
+SHOP_ADDRESS = "2601 S Tryon St, Charlotte, NC 28203"
+
+DAMAGE_LABELS = {
+    "en": {
+        "collision": "Collision damage",
+        "dent": "Dent / ding",
+        "bumper": "Bumper damage",
+        "fender": "Fender damage",
+        "scratches": "Scratches / paint damage",
+        "repaint": "Full repaint / color change",
+        "other": "Other / not sure",
+    },
+    "es": {
+        "collision": "Daño por colisión",
+        "dent": "Abolladura / golpe",
+        "bumper": "Daño en defensa",
+        "fender": "Daño en salpicadera",
+        "scratches": "Rayones / daño de pintura",
+        "repaint": "Repintado completo / cambio de color",
+        "other": "Otro / no estoy seguro",
+    },
+}
+
 storage_key: Optional[str] = None
 
 
@@ -210,6 +235,64 @@ def _estimate_email(estimate: "Estimate") -> tuple[str, str]:
     return subject, html
 
 
+def _customer_email(estimate: "Estimate") -> tuple[str, str]:
+    es = estimate.lang == "es"
+    name = escape(estimate.name.split(" ")[0] or estimate.name)
+    vehicle = escape(f"{estimate.vehicle_year} {estimate.vehicle_make} {estimate.vehicle_model}")
+    labels = DAMAGE_LABELS["es" if es else "en"]
+    damage = escape(labels.get(estimate.damage_type or "", estimate.damage_type or ("No especificado" if es else "Not specified")))
+    phone_links = (
+        f'<a href="tel:+17048400725" style="color:#DC2626;font-weight:bold">{SHOP_PHONE_1}</a>'
+        f' &nbsp;·&nbsp; <a href="tel:+15162348027" style="color:#DC2626;font-weight:bold">{SHOP_PHONE_2}</a>'
+    )
+    if es:
+        subject = "Recibimos su solicitud de presupuesto — Marcala Auto Body"
+        heading = f"¡Gracias, {name}!"
+        intro = (
+            f"Hemos recibido su solicitud de presupuesto para su <strong>{vehicle}</strong>. "
+            "Nuestro equipo revisa las solicitudes durante el horario de atención "
+            "(lunes a viernes de 9 AM a 6 PM, sábado de 9 AM a 4 PM) y nos comunicaremos con usted pronto."
+        )
+        row_labels = ("Vehículo", "Tipo de daño", "Referencia")
+        faster = "¿Lo necesita más rápido? Llámenos o visítenos:"
+        footer = (
+            "Marcala Auto Body — 2601 S Tryon St, Charlotte, NC 28203. "
+            "Recibió este correo porque solicitó un presupuesto en nuestro sitio web."
+        )
+    else:
+        subject = "We received your estimate request — Marcala Auto Body"
+        heading = f"Thank you, {name}!"
+        intro = (
+            f"We've received your estimate request for your <strong>{vehicle}</strong>. "
+            "Our team reviews requests during business hours "
+            "(Mon–Fri 9 AM–6 PM, Sat 9 AM–4 PM) and will reach out to you shortly."
+        )
+        row_labels = ("Vehicle", "Damage type", "Reference")
+        faster = "Need it faster? Call or stop by:"
+        footer = (
+            "Marcala Auto Body — 2601 S Tryon St, Charlotte, NC 28203. "
+            "You received this email because you requested an estimate on our website."
+        )
+    rows = "".join(
+        f'<tr><td style="padding:8px 16px 8px 0;color:#64748B;font-size:13px;vertical-align:top;white-space:nowrap">{label}</td>'
+        f'<td style="padding:8px 0;color:#0F172A;font-size:14px">{value}</td></tr>'
+        for label, value in zip(row_labels, (vehicle, damage, escape(estimate.id[:8].upper())))
+    )
+    html = (
+        '<table role="presentation" width="100%" style="background:#F8FAFC;padding:24px 0"><tr><td align="center">'
+        '<table role="presentation" width="560" style="background:#FFFFFF;border:1px solid #E2E8F0;'
+        'border-top:4px solid #DC2626;padding:28px;font-family:Arial,sans-serif">'
+        f'<tr><td><p style="margin:0 0 4px;font-size:12px;letter-spacing:2px;color:#DC2626;font-weight:bold">MARCALA AUTO BODY</p>'
+        f'<h1 style="margin:0 0 12px;font-size:20px;color:#0F172A">{heading}</h1>'
+        f'<p style="margin:0 0 16px;font-size:14px;color:#334155;line-height:1.6">{intro}</p>'
+        f'<table role="presentation">{rows}</table>'
+        f'<p style="margin:20px 0 0;font-size:14px;color:#334155">{faster}<br>{phone_links}</p>'
+        f'<p style="margin:20px 0 0;font-size:11px;color:#94A3B8">{footer}</p>'
+        '</td></tr></table></td></tr></table>'
+    )
+    return subject, html
+
+
 def _estimate_sms_body(estimate: "Estimate") -> str:
     damage = estimate.damage_type or "damage"
     return (
@@ -236,7 +319,10 @@ async def notify_new_estimate(estimate: "Estimate") -> None:
         subject, html = _estimate_email(estimate)
         tasks.append(send_email(to=NOTIFY_EMAIL, subject=subject, html=html))
     else:
-        logger.warning("Email notification skipped: EMERGENT_EMAIL_KEY or NOTIFY_EMAIL missing")
+        logger.warning("Owner email notification skipped: EMERGENT_EMAIL_KEY or NOTIFY_EMAIL missing")
+    if EMAIL_KEY:
+        subject, html = _customer_email(estimate)
+        tasks.append(send_email(to=estimate.email, subject=subject, html=html))
     if NOTIFY_PHONE and all(os.environ.get(k) for k in ("TWILIO_ACCOUNT_SID", "TWILIO_AUTH_TOKEN", "TWILIO_FROM_NUMBER")):
         tasks.append(asyncio.to_thread(_send_estimate_sms, estimate))
     else:
@@ -292,6 +378,7 @@ class Estimate(BaseModel):
     vehicle_model: str
     damage_type: Optional[str] = None
     description: str
+    lang: str = "en"
     photos: List[EstimatePhoto] = Field(default_factory=list)
     status: str = "new"
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
@@ -325,6 +412,7 @@ async def create_estimate(
     vehicle_model: str = Form(...),
     damage_type: Optional[str] = Form(None),
     description: str = Form(...),
+    lang: str = Form("en"),
     photos: List[UploadFile] = File(default=[]),
 ):
     photos = [p for p in photos if p.filename]
@@ -365,6 +453,7 @@ async def create_estimate(
         vehicle_model=vehicle_model.strip(),
         damage_type=damage_type,
         description=description.strip(),
+        lang="es" if lang == "es" else "en",
         photos=saved,
     )
     await db.estimates.insert_one(estimate.model_dump())

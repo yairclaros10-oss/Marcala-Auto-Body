@@ -33,7 +33,7 @@ function damageLabels(t: Dict): Record<DamageKey, string> {
 }
 
 export default function EstimateForm() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const labels = damageLabels(t);
   const [form, setForm] = useState({
     name: "",
@@ -81,6 +81,7 @@ export default function EstimateForm() {
       fd.append("vehicle_make", form.make);
       fd.append("vehicle_model", form.model);
       fd.append("description", form.description);
+      fd.append("lang", lang);
       if (damageType) fd.append("damage_type", damageType);
       photos.forEach((p) => fd.append("photos", p));
       const res = await fetch("/api/estimates", { method: "POST", body: fd });
