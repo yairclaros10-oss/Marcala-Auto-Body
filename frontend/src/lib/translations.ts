@@ -220,6 +220,8 @@ const en = {
       { title: "Bumper & Quarter Damage Intake", category: "bumpers" },
       { title: "Hand-Finished Paintwork", category: "paint" },
       { title: "Quarter Panel Body Work in Progress", category: "collision" },
+      { title: "Full Respray in the Booth", category: "paint" },
+      { title: "Prepping & Masking for Paint", category: "paint" },
     ],
   },
   reviews: {
@@ -551,6 +553,8 @@ const es: Dict = {
       { title: "Recepción de Daño en Defensa y Lateral", category: "bumpers" },
       { title: "Pintura Terminada a Mano", category: "paint" },
       { title: "Trabajo de Panel Lateral en Proceso", category: "collision" },
+      { title: "Repintado Completo en Cabina", category: "paint" },
+      { title: "Preparación y Enmascarado para Pintura", category: "paint" },
     ],
   },
   reviews: {

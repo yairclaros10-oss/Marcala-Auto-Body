@@ -23,6 +23,8 @@ const WORK_IMAGES = [
   "https://images.unsplash.com/photo-1692119439873-7a4be83beeea?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHxkYW1hZ2VkJTIwY2FyJTIwZGVudCUyMHNjcmF0Y2glMjBjbG9zZXVwfGVufDB8fHx8MTc5MDYwNTc4OHww&ixlib=rb-4.1.0&q=85",
   "https://images.unsplash.com/photo-1708805282706-f44730b7e527?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHw0fHxwb2xpc2hlZCUyMGx1eHVyeSUyMGNhciUyMHBhaW50JTIwZGV0YWlsJTIwc2hpbmV8ZW58MHx8fHwxNzkwNjA1Nzg4fDA&ixlib=rb-4.1.0&q=85",
   "/work/gallery-quarter-panel.jpg",
+  "/work/gallery-booth-spray.webp",
+  "/work/gallery-masking-prep.webp",
 ];
 
 export default function Gallery() {
