@@ -48,6 +48,14 @@ export default function Footer() {
               {BUSINESS.phoneDisplay}
             </a>
             <a
+              href={BUSINESS.phone2Tel}
+              data-testid="footer-phone2-link"
+              className="flex items-center gap-2.5 transition-colors hover:text-white"
+            >
+              <Phone className="h-4 w-4 text-[#DC2626]" />
+              {BUSINESS.phone2Display}
+            </a>
+            <a
               href={`mailto:${BUSINESS.email}`}
               data-testid="footer-email-link"
               className="flex items-center gap-2.5 transition-colors hover:text-white"

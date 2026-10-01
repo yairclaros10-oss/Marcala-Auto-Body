@@ -37,6 +37,13 @@ export default function Contact() {
                   >
                     {BUSINESS.phoneDisplay}
                   </a>
+                  <a
+                    href={BUSINESS.phone2Tel}
+                    data-testid="contact-phone2-link"
+                    className="mt-0.5 block text-sm font-semibold text-slate-300 transition-colors hover:text-[#F87171]"
+                  >
+                    {BUSINESS.phone2Display}
+                  </a>
                 </div>
               </div>
               <a

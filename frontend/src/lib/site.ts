@@ -3,6 +3,8 @@ export const BUSINESS = {
   tagline: "Quality Auto Body Repair You Can Trust.",
   phoneDisplay: "(704) 840-0725",
   phoneTel: "tel:+17048400725",
+  phone2Display: "(516) 234-8027",
+  phone2Tel: "tel:+15162348027",
   email: "collisionmarcalaauto@gmail.com",
   address: "2601 S Tryon St, Charlotte, NC 28203",
   mapsDirectionsUrl:

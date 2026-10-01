@@ -5,7 +5,7 @@ Professional, modern website for Marcala Auto Body, an auto body & collision rep
 
 ## Verified Business Info (sources: Google Business Profile via user-provided link, Chamber of Commerce, Birdeye)
 - Address: 2601 S Tryon St, Charlotte, NC 28203 (current Google listing; older directories list 6401 N Tryon St Suite B and 513 W 24th St — shop has moved; OWNER SHOULD CONFIRM current location)
-- Phone: (704) 840-0725 (consistent across Google, Chamber, MapQuest)
+- Phone: (704) 840-0725 (consistent across Google, Chamber, MapQuest); second line added by owner 2026-10-01: (516) 234-8027
 - Email: collisionmarcalaauto@gmail.com (provided by owner 2026-09-29)
 - Hours: Mon–Fri 9:00 AM–6:00 PM, Sat 9:00 AM–4:00 PM, Sun Closed
 - Rating: 4.5 from 24 Google reviews (Google listing, Sep 2026)
