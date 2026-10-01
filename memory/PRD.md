@@ -35,6 +35,10 @@ Professional, modern website for Marcala Auto Body, an auto body & collision rep
 - Updated address site-wide (Contact, Footer, About, map embed, directions, JSON-LD) to 2601 S Tryon St, Charlotte, NC 28203 per the current Google Business Profile
 - Domain request answered: Emergent preview/deploy subdomains are not customizable; a custom domain (e.g. marcala-auto-body.com) can be connected after publishing via Manage Publishes → Domain tab (auto-link or buy through Emergent)
 
+## Implemented (2026-10-01)
+- Added full EN/ES language toggle (ES/EN button in navbar desktop + mobile, data-testid language-toggle / language-toggle-mobile); all UI copy translated via `src/lib/translations.ts` dictionary + `src/lib/i18n.tsx` LanguageProvider (real customer review quotes remain verbatim in English); verified toggle round-trip and Spanish estimate submission end-to-end
+- Replaced placeholder branding with the owner's uploaded logo: transparent-background `public/logo.png` in header + footer, favicons (16/32/180) generated from the car artwork, og:image + twitter card meta updated
+
 ## Backlog
 - P0: Owner confirms current address (Google listing shows 2601 S Tryon St; older directories show 6401 N Tryon St Suite B) — site currently uses 2601 S Tryon St; replace placeholder gallery/before-after imagery with real shop photos
 - P1: Admin view/login for reviewing submitted estimates (GET /api/estimates is currently unauthenticated); email notification to collisionmarcalaauto@gmail.com on new estimate (Resend); delete test submissions from the DB before launch; connect custom domain after publishing

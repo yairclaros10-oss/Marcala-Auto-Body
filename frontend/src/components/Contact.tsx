@@ -1,23 +1,22 @@
 import { Clock, Mail, MapPin, Navigation, Phone } from "lucide-react";
-import { BUSINESS, HOURS, isOpenNow } from "@/lib/site";
+import { BUSINESS, isOpenNow } from "@/lib/site";
+import { useLang } from "@/lib/i18n";
 
 export default function Contact() {
   const open = isOpenNow();
+  const { t } = useLang();
 
   return (
     <section id="contact" className="border-t border-white/5 bg-[#0B0D11] py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#F87171]">
-            Contact
+            {t.contact.kicker}
           </p>
           <h2 className="font-heading mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
-            Visit the Shop on South Tryon Street
+            {t.contact.heading}
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-slate-400">
-            Stop by for a free in-person estimate, or give us a call — we are happy to answer
-            questions about damage, timelines, and insurance claims.
-          </p>
+          <p className="mt-4 text-base leading-relaxed text-slate-400">{t.contact.sub}</p>
         </div>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
@@ -29,7 +28,7 @@ export default function Contact() {
                 </span>
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-                    Call the shop
+                    {t.contact.callLabel}
                   </p>
                   <a
                     href={BUSINESS.phoneTel}
@@ -45,7 +44,7 @@ export default function Contact() {
                 data-testid="contact-call-now-button"
                 className="hidden shrink-0 rounded-md bg-[#DC2626] px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-[#B91C1C] sm:inline-flex"
               >
-                Call Now
+                {t.contact.callNow}
               </a>
             </div>
 
@@ -56,7 +55,7 @@ export default function Contact() {
                 </span>
                 <div>
                   <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-                    Address
+                    {t.contact.addressLabel}
                   </p>
                   <p data-testid="contact-address-text" className="text-base font-semibold text-white">
                     {BUSINESS.address}
@@ -71,7 +70,7 @@ export default function Contact() {
                 className="hidden shrink-0 items-center gap-2 rounded-md border border-white/15 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-white/5 sm:inline-flex"
               >
                 <Navigation className="h-4 w-4 text-[#DC2626]" />
-                Directions
+                {t.contact.directions}
               </a>
             </div>
 
@@ -82,7 +81,7 @@ export default function Contact() {
                 </span>
                 <div className="min-w-0">
                   <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-                    Email us
+                    {t.contact.emailLabel}
                   </p>
                   <a
                     href={`mailto:${BUSINESS.email}`}
@@ -102,7 +101,7 @@ export default function Contact() {
                     <Clock className="h-6 w-6" />
                   </span>
                   <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-                    Business hours
+                    {t.contact.hoursLabel}
                   </p>
                 </div>
                 <span
@@ -111,15 +110,19 @@ export default function Contact() {
                     open ? "bg-emerald-500/15 text-emerald-400" : "bg-[#DC2626]/15 text-[#F87171]"
                   }`}
                 >
-                  {open ? "Open now" : "Closed"}
+                  {open ? t.contact.openNow : t.contact.closed}
                 </span>
               </div>
               <table data-testid="contact-hours-table" className="mt-5 w-full text-sm">
                 <tbody>
-                  {HOURS.map((h) => (
+                  {t.contact.hours.map((h) => (
                     <tr key={h.days} className="border-t border-white/5">
                       <td className="py-3 font-medium text-slate-300">{h.days}</td>
-                      <td className={`py-3 text-right font-semibold ${h.time === "Closed" ? "text-[#F87171]" : "text-white"}`}>
+                      <td
+                        className={`py-3 text-right font-semibold ${
+                          h.time === "Closed" || h.time === "Cerrado" ? "text-[#F87171]" : "text-white"
+                        }`}
+                      >
                         {h.time}
                       </td>
                     </tr>
@@ -134,7 +137,7 @@ export default function Contact() {
             className="overflow-hidden rounded-xl border border-white/10"
           >
             <iframe
-              title="Map to Marcala Auto Body, 6401 N Tryon St Suite B, Charlotte, NC 28213"
+              title={t.contact.mapTitle}
               src={BUSINESS.mapEmbedUrl}
               className="h-full min-h-[420px] w-full grayscale-[35%] contrast-[1.05]"
               loading="lazy"

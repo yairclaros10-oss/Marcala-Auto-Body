@@ -1,49 +1,48 @@
 import { ExternalLink, Quote, Star } from "lucide-react";
 import { BUSINESS } from "@/lib/site";
+import { useLang } from "@/lib/i18n";
+import { fill } from "@/lib/translations";
 
 interface Review {
   name: string;
-  date: string;
   text: string;
   verifiedFiveStar?: boolean;
 }
 
-// Real customer reviews sourced from the shop's public Google profile.
+// Real customer reviews sourced from the shop's public Google profile (verbatim quotes).
 const REVIEWS: Review[] = [
   {
     name: "Elin Santos",
-    date: "April 2026",
     text: "I recently got my truck painted by this awesome company, who also fixed some dents on one of my doors. You can't even tell someone hit my car after they fixed it. I changed the entire color of my vehicle from white to black. It looks awesome, I love the way it turned out.",
   },
   {
     name: "Local Client",
-    date: "December 2025",
     text: "They are the best in the city, top quality and outstanding service. I took my 2023 Tesla Model Y and it looks brand new. They did an amazing job. I highly recommend them.",
   },
   {
     name: "Beans Book of Rod Shops",
-    date: "April 2025",
     text: "Took my 2012 Genesis sedan with rear fender damage here to be repaired. As Marco assessed the damage, I decided to have them paint it as well. He did a complete color change including door jambs and under the hood. The car was ready very fast and he did a great job both on the damage and the paint.",
     verifiedFiveStar: true,
   },
   {
     name: "Faizan Zeb",
-    date: "January 2026",
     text: "They are the best in body shop.",
   },
 ];
 
 export default function Reviews() {
+  const { t } = useLang();
+
   return (
     <section id="reviews" data-testid="reviews-section" className="border-t border-white/5 bg-[#0B0D11] py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-3">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#F87171]">
-              Customer Reviews
+              {t.reviews.kicker}
             </p>
             <h2 className="font-heading mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl lg:text-4xl">
-              What Charlotte Drivers Say
+              {t.reviews.heading}
             </h2>
             <div className="mt-8 rounded-xl border border-white/10 bg-[#12161E] p-6">
               <div className="flex items-center gap-1">
@@ -58,7 +57,7 @@ export default function Reviews() {
                 {BUSINESS.rating} <span className="text-base font-medium text-slate-400">/ 5</span>
               </p>
               <p className="mt-1 text-sm text-slate-400">
-                Based on {BUSINESS.reviewCount} Google reviews
+                {fill(t.reviews.basedOn, { count: BUSINESS.reviewCount })}
               </p>
               <a
                 href={BUSINESS.reviewsUrl}
@@ -67,7 +66,7 @@ export default function Reviews() {
                 data-testid="reviews-external-link"
                 className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#F87171] transition-colors hover:text-white"
               >
-                Read all reviews on Google
+                {t.reviews.readAll}
                 <ExternalLink className="h-3.5 w-3.5" />
               </a>
             </div>
@@ -96,10 +95,10 @@ export default function Reviews() {
                 <div className="mt-6 flex items-center justify-between border-t border-white/5 pt-4">
                   <div>
                     <p className="text-sm font-semibold text-white">{review.name}</p>
-                    <p className="text-xs text-slate-500">{review.date}</p>
+                    <p className="text-xs text-slate-500">{t.reviews.dates[i]}</p>
                   </div>
                   <span className="rounded-full bg-white/5 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                    Google review
+                    {t.reviews.chip}
                   </span>
                 </div>
               </article>

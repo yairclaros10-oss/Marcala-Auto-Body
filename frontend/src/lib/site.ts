@@ -15,12 +15,6 @@ export const BUSINESS = {
   reviewCount: 24,
 };
 
-export const HOURS = [
-  { days: "Monday – Friday", time: "9:00 AM – 6:00 PM" },
-  { days: "Saturday", time: "9:00 AM – 4:00 PM" },
-  { days: "Sunday", time: "Closed" },
-];
-
 // Open/closed in shop local time (America/New_York): Mon-Fri 9-18, Sat 9-16, Sun closed.
 export function isOpenNow(): boolean {
   const now = new Date(new Date().toLocaleString("en-US", { timeZone: "America/New_York" }));
@@ -31,12 +25,4 @@ export function isOpenNow(): boolean {
   return mins >= 9 * 60 && mins < close;
 }
 
-export const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
-  { label: "Our Work", href: "#work" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "Request an Estimate", href: "#estimate" },
-  { label: "Contact", href: "#contact" },
-];
+export const NAV_HREFS = ["#home", "#services", "#about", "#work", "#reviews", "#estimate", "#contact"];

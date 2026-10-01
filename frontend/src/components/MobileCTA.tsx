@@ -1,7 +1,10 @@
 import { ClipboardList, Phone } from "lucide-react";
 import { BUSINESS } from "@/lib/site";
+import { useLang } from "@/lib/i18n";
 
 export default function MobileCTA() {
+  const { t } = useLang();
+
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-white/10 bg-[#0B0D11]/95 backdrop-blur-xl sm:hidden">
       <a
@@ -10,7 +13,7 @@ export default function MobileCTA() {
         className="flex items-center justify-center gap-2 py-4 text-sm font-semibold text-white"
       >
         <Phone className="h-4 w-4 text-[#DC2626]" />
-        Call Shop
+        {t.mobile.call}
       </a>
       <a
         href="#estimate"
@@ -18,7 +21,7 @@ export default function MobileCTA() {
         className="flex items-center justify-center gap-2 bg-[#DC2626] py-4 text-sm font-semibold text-white"
       >
         <ClipboardList className="h-4 w-4" />
-        Get Estimate
+        {t.mobile.estimate}
       </a>
     </div>
   );
