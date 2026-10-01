@@ -18,6 +18,17 @@ export default function Home() {
       <main>
         <Hero />
         <Marquee />
+        <section className="bg-[#0B0D11] px-4 pt-14 sm:px-6 lg:px-8" aria-label="Inside the shop">
+          <div className="mx-auto max-w-7xl">
+            <img
+              src="/work/banner-cap.webp"
+              alt="A Marcala Auto Body shop cap resting on a freshly painted red fender inside the booth"
+              data-testid="shop-banner-image"
+              loading="lazy"
+              className="aspect-[21/9] w-full rounded-xl border border-white/10 object-cover object-center shadow-[0_0_50px_rgba(220,38,38,0.12)]"
+            />
+          </div>
+        </section>
         <Services />
         <BeforeAfter />
         <About />
