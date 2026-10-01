@@ -44,6 +44,7 @@ Professional, modern website for Marcala Auto Body, an auto body & collision rep
 - Gallery: first real shop photo added (`public/work/gallery-quarter-panel.jpg` — technician doing quarter-panel body work on a red Mitsubishi SUV), shown as "Quarter Panel Body Work in Progress" under the Collision filter; real photos (local /work/ paths) render without the Placeholder badge, stock items keep it
 - About section image replaced with real shop photo (`public/work/about-painting.webp` — technician spraying red paint, logo watermark), displayed at natural 8:3 banner ratio; placeholder caption removed
 - Full-width shop banner added between the marquee and the Services ("What We Do") section: `public/work/banner-cap.webp` (Marcala cap on freshly painted red fender), 21:9 crop, both languages
+- Hero stock photo removed per owner request (2026-10-01): hero is now a text-first single-column layout, keeping the masked line reveal, CTAs and trust stats; unused parallax code removed
 - Publish attempt: blocked by balance — first deploy costs 50 ECUs/month, user balance was 40 ECUs; user to top up via Profile → Manage plan, then re-dispatch deploy (no charge consent flag) and connect marcala-auto-body.com via Manage Publishes → Domain tab
 
 ## Implemented (2026-10-01, part 2)

@@ -1,34 +1,24 @@
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
+import { motion } from "motion/react";
 import { ClipboardList, MapPin, Phone, ShieldCheck, Star, Clock } from "lucide-react";
 import { BUSINESS } from "@/lib/site";
 import { useLang } from "@/lib/i18n";
-
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1618312980096-873bd19759a0?crop=entropy&cs=srgb&fm=jpg&w=1600&q=80&auto=format&ixlib=rb-4.1.0";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 export default function Hero() {
   const { t } = useLang();
-  const sectionRef = useRef<HTMLElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end start"],
-  });
-  const imageY = useTransform(scrollYProgress, [0, 1], [0, 90]);
 
   return (
-    <section id="home" ref={sectionRef} className="relative overflow-hidden pt-16">
+    <section id="home" className="relative overflow-hidden pt-16">
       <div
         className="pointer-events-none absolute inset-0 opacity-40"
         style={{
           background:
-            "radial-gradient(60% 50% at 75% 30%, rgba(220,38,38,0.18) 0%, rgba(11,13,17,0) 70%)",
+            "radial-gradient(55% 45% at 20% 25%, rgba(220,38,38,0.16) 0%, rgba(11,13,17,0) 70%)",
         }}
       />
-      <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-28">
-        <div>
+      <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-36">
+        <div className="max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
@@ -69,7 +59,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.5, ease: EASE }}
-            className="mt-6 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg"
+            className="mt-6 max-w-2xl text-base leading-relaxed text-slate-300 sm:text-lg"
           >
             {t.hero.description}
           </motion.p>
@@ -100,7 +90,7 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.85 }}
-            className="mt-10 grid grid-cols-1 gap-4 border-t border-white/10 pt-8 sm:grid-cols-3"
+            className="mt-12 grid grid-cols-1 gap-4 border-t border-white/10 pt-8 sm:grid-cols-3"
           >
             <div className="flex items-center gap-3">
               <Star className="h-5 w-5 shrink-0 fill-[#DC2626] text-[#DC2626]" />
@@ -130,31 +120,6 @@ export default function Hero() {
             </div>
           </motion.div>
         </div>
-
-        <motion.div
-          initial={{ clipPath: "inset(0 0 100% 0)", opacity: 0.4 }}
-          animate={{ clipPath: "inset(0 0 0% 0)", opacity: 1 }}
-          transition={{ duration: 1.1, delay: 0.25, ease: EASE }}
-          className="relative"
-        >
-          <div className="absolute -inset-3 rounded-2xl bg-[#DC2626]/15 blur-2xl" />
-          <motion.div
-            style={{ y: imageY }}
-            className="relative overflow-hidden rounded-xl border border-white/10 shadow-2xl"
-          >
-            <img
-              src={HERO_IMAGE}
-              alt={t.hero.imageAlt}
-              className="aspect-[4/3] w-full object-cover"
-              loading="eager"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0B0D11]/70 via-transparent to-transparent" />
-            <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-md border border-white/10 bg-[#0B0D11]/80 px-4 py-3 backdrop-blur-md">
-              <p className="text-sm font-semibold text-white">{t.hero.imageCaption}</p>
-              <p className="text-xs uppercase tracking-[0.18em] text-[#F87171]">{t.hero.imageTag}</p>
-            </div>
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );
