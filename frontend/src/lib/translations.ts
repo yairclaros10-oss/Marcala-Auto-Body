@@ -113,6 +113,9 @@ const en = {
     caseTab: "Case",
     beforeLabel: "Before — Placeholder",
     afterLabel: "After — Placeholder",
+    beforeRealLabel: "Before",
+    afterRealLabel: "After",
+    realNote: "Real repair — this Honda S2000's front end was rebuilt and refinished right here at Marcala Auto Body. More real shop photos are on the way.",
     sliderAria: "Drag to compare before and after",
     beforeAlt: "before repair (placeholder photo)",
     afterAlt: "after repair (placeholder photo)",
@@ -122,12 +125,12 @@ const en = {
     cta: "Get This Done for Your Vehicle",
     cases: [
       {
-        title: "Front Quarter Collision",
-        service: "Collision & Fender Realignment",
+        title: "Honda S2000 — Front-End Rebuild",
+        service: "Collision Repair & Front Clip Restoration",
         damage:
-          "Crush damage across the fender, cracked bumper cover, and a misaligned panel seam after a front-quarter impact.",
+          "Front clip torn down after collision damage — hood, bumper, and headlight assemblies removed with the engine bay exposed.",
         repair:
-          "Panel measurement and straightening, bumper repair and refinish, then a multi-stage paint blend into the adjacent panel.",
+          "Complete front-end reassembly with refinished panels, fresh black paint and clear coat, restored lighting, and a final cut-and-buff detail.",
       },
       {
         title: "Rear Bumper & Panel Impact",
@@ -434,6 +437,9 @@ const es: Dict = {
     caseTab: "Caso",
     beforeLabel: "Antes — Ejemplo",
     afterLabel: "Después — Ejemplo",
+    beforeRealLabel: "Antes",
+    afterRealLabel: "Después",
+    realNote: "Reparación real — el frente de este Honda S2000 fue reconstruido y repintado aquí mismo en Marcala Auto Body. Más fotos reales del taller próximamente.",
     sliderAria: "Arrastre para comparar antes y después",
     beforeAlt: "antes de la reparación (foto de ejemplo)",
     afterAlt: "después de la reparación (foto de ejemplo)",
@@ -443,12 +449,12 @@ const es: Dict = {
     cta: "Haga Esto con Su Vehículo",
     cases: [
       {
-        title: "Colisión en Cuarto Delantero",
-        service: "Colisión y Alineación de Salpicadera",
+        title: "Honda S2000 — Reconstrucción del Frente",
+        service: "Reparación de Colisión y Restauración del Frente",
         damage:
-          "Daño por aplastamiento en la salpicadera, defensa agrietada y unión de panel desalineada después de un impacto en el cuarto delantero.",
+          "Frente desarmado después de daño por colisión — cofre, defensa y faros removidos con el motor expuesto.",
         repair:
-          "Medición y enderezado de paneles, reparación y repintado de la defensa, y mezcla de pintura de múltiples etapas hacia el panel adyacente.",
+          "Reensamblaje completo del frente con paneles repintados, pintura negra nueva con capa transparente, iluminación restaurada y detallado final de corte y pulido.",
       },
       {
         title: "Impacto en Defensa Trasera y Panel",

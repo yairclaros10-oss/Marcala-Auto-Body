@@ -38,6 +38,7 @@ Professional, modern website for Marcala Auto Body, an auto body & collision rep
 ## Implemented (2026-10-01)
 - Added full EN/ES language toggle (ES/EN button in navbar desktop + mobile, data-testid language-toggle / language-toggle-mobile); all UI copy translated via `src/lib/translations.ts` dictionary + `src/lib/i18n.tsx` LanguageProvider (real customer review quotes remain verbatim in English); verified toggle round-trip and Spanish estimate submission end-to-end
 - Replaced placeholder branding with the owner's uploaded logo: transparent-background `public/logo.png` in header + footer, favicons (16/32/180) generated from the car artwork, og:image + twitter card meta updated
+- Case 1 of the before/after slider now uses real shop photos (owner-uploaded Honda S2000 front-end rebuild: `public/work/case1-before.jpg` stripped front clip, `case1-after.jpg` finished) with "Real repair" note in EN/ES; cases 2–3 remain marked placeholders; fixed slow-decoding 12MP Unsplash images (added w=1600 params + keyed img elements)
 
 ## Backlog
 - P0: Owner confirms current address (Google listing shows 2601 S Tryon St; older directories show 6401 N Tryon St Suite B) — site currently uses 2601 S Tryon St; replace placeholder gallery/before-after imagery with real shop photos

@@ -1,11 +1,25 @@
 import { useState } from "react";
-import { ChevronsLeftRight, Info } from "lucide-react";
+import { BadgeCheck, ChevronsLeftRight, Info } from "lucide-react";
 import { useLang } from "@/lib/i18n";
 
-const CASE_IMAGES = [
-  "https://images.unsplash.com/photo-1692119439873-7a4be83beeea?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwxfHxkYW1hZ2VkJTIwY2FyJTIwZGVudCUyMHNjcmF0Y2glMjBjbG9zZXVwfGVufDB8fHx8MTc5MDYwNTc4OHww&ixlib=rb-4.1.0&q=85",
-  "https://images.unsplash.com/photo-1703609438732-2fad53e62a4b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHwzfHxkYW1hZ2VkJTIwY2FyJTIwZGVudCUyMHNjcmF0Y2glMjBjbG9zZXVwfGVufDB8fHx8MTc5MDYwNTc4OHww&ixlib=rb-4.1.0&q=85",
-  "https://images.unsplash.com/photo-1733928907064-6a92c9ce0e87?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDN8MHwxfHNlYXJjaHw0fHxkYW1hZ2VkJTIwY2FyJTIwZGVudCUyMHNjcmF0Y2glMjBjbG9zZXVwfGVufDB8fHx8MTc5MDYwNTc4OHww&ixlib=rb-4.1.0&q=85",
+// real: separate genuine before/after shop photos; placeholder cases reuse one stock image with a
+// grayscale "before" treatment until real photos are supplied.
+const CASE_MEDIA = [
+  { before: "/work/case1-before.jpg", after: "/work/case1-after.jpg", real: true },
+  {
+    before:
+      "https://images.unsplash.com/photo-1703609438732-2fad53e62a4b?crop=entropy&cs=srgb&fm=jpg&w=1600&q=80&auto=format&ixlib=rb-4.1.0",
+    after:
+      "https://images.unsplash.com/photo-1703609438732-2fad53e62a4b?crop=entropy&cs=srgb&fm=jpg&w=1600&q=80&auto=format&ixlib=rb-4.1.0",
+    real: false,
+  },
+  {
+    before:
+      "https://images.unsplash.com/photo-1733928907064-6a92c9ce0e87?crop=entropy&cs=srgb&fm=jpg&w=1600&q=80&auto=format&ixlib=rb-4.1.0",
+    after:
+      "https://images.unsplash.com/photo-1733928907064-6a92c9ce0e87?crop=entropy&cs=srgb&fm=jpg&w=1600&q=80&auto=format&ixlib=rb-4.1.0",
+    real: false,
+  },
 ];
 
 export default function BeforeAfter() {
@@ -13,6 +27,7 @@ export default function BeforeAfter() {
   const [pos, setPos] = useState(50);
   const { t } = useLang();
   const current = t.beforeAfter.cases[active];
+  const media = CASE_MEDIA[active];
 
   return (
     <section id="before-after" className="border-t border-white/5 bg-[#0E1117] py-20 lg:py-28">
@@ -28,7 +43,7 @@ export default function BeforeAfter() {
             <p className="mt-4 text-base leading-relaxed text-slate-400">{t.beforeAfter.sub}</p>
           </div>
           <div className="flex gap-2">
-            {CASE_IMAGES.map((_, i) => (
+            {CASE_MEDIA.map((_, i) => (
               <button
                 key={i}
                 data-testid={`before-after-tab-case-${i + 1}`}
@@ -52,7 +67,8 @@ export default function BeforeAfter() {
           <div className="lg:col-span-3">
             <div className="relative aspect-[16/10] select-none overflow-hidden rounded-xl border border-white/10">
               <img
-                src={CASE_IMAGES[active]}
+                key={`after-${active}`}
+                src={media.after}
                 alt={`${current.title} — ${t.beforeAfter.afterAlt}`}
                 className="absolute inset-0 h-full w-full object-cover"
                 draggable={false}
@@ -62,17 +78,20 @@ export default function BeforeAfter() {
                 style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
               >
                 <img
-                  src={CASE_IMAGES[active]}
+                  key={`before-${active}`}
+                  src={media.before}
                   alt={`${current.title} — ${t.beforeAfter.beforeAlt}`}
-                  className="absolute inset-0 h-full w-full object-cover grayscale contrast-125 brightness-[0.6]"
+                  className={`absolute inset-0 h-full w-full object-cover ${
+                    media.real ? "" : "grayscale contrast-125 brightness-[0.6]"
+                  }`}
                   draggable={false}
                 />
               </div>
               <span className="absolute left-3 top-3 rounded-sm bg-black/70 px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-white">
-                {t.beforeAfter.beforeLabel}
+                {media.real ? t.beforeAfter.beforeRealLabel : t.beforeAfter.beforeLabel}
               </span>
               <span className="absolute right-3 top-3 rounded-sm bg-[#DC2626] px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-white">
-                {t.beforeAfter.afterLabel}
+                {media.real ? t.beforeAfter.afterRealLabel : t.beforeAfter.afterLabel}
               </span>
               <div
                 className="pointer-events-none absolute inset-y-0"
@@ -94,10 +113,17 @@ export default function BeforeAfter() {
                 className="absolute inset-0 h-full w-full cursor-ew-resize opacity-0"
               />
             </div>
-            <div className="mt-4 flex items-start gap-2 rounded-md border border-dashed border-[#DC2626]/40 bg-[#DC2626]/5 px-4 py-3">
-              <Info className="mt-0.5 h-4 w-4 shrink-0 text-[#F87171]" />
-              <p className="text-xs leading-relaxed text-slate-400">{t.beforeAfter.note}</p>
-            </div>
+            {media.real ? (
+              <div className="mt-4 flex items-start gap-2 rounded-md border border-emerald-500/30 bg-emerald-500/5 px-4 py-3">
+                <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
+                <p className="text-xs leading-relaxed text-slate-300">{t.beforeAfter.realNote}</p>
+              </div>
+            ) : (
+              <div className="mt-4 flex items-start gap-2 rounded-md border border-dashed border-[#DC2626]/40 bg-[#DC2626]/5 px-4 py-3">
+                <Info className="mt-0.5 h-4 w-4 shrink-0 text-[#F87171]" />
+                <p className="text-xs leading-relaxed text-slate-400">{t.beforeAfter.note}</p>
+              </div>
+            )}
           </div>
 
           <div className="flex flex-col gap-5 lg:col-span-2">
