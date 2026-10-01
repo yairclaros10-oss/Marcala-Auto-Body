@@ -213,13 +213,15 @@ def _estimate_email(estimate: "Estimate") -> tuple[str, str]:
     )
     photo_links = ""
     if estimate.photos and APP_BASE_URL:
-        links = "".join(
-            f'<a href="{APP_BASE_URL}{escape(p.url)}" style="color:#DC2626;font-size:13px">Photo {i + 1}</a> '
+        cells = "".join(
+            f'<a href="{APP_BASE_URL}{escape(p.url)}"><img src="{APP_BASE_URL}{escape(p.url)}" '
+            f'alt="Vehicle photo {i + 1}" width="160" style="width:160px;height:auto;border-radius:6px;'
+            f'border:1px solid #E2E8F0;margin:4px 8px 4px 0;display:inline-block"></a>'
             for i, p in enumerate(estimate.photos)
         )
         photo_links = (
             f'<tr><td style="padding:8px 16px 8px 0;color:#64748B;font-size:13px;vertical-align:top">Photos</td>'
-            f'<td style="padding:8px 0">{links}</td></tr>'
+            f'<td style="padding:8px 0">{cells}</td></tr>'
         )
     html = (
         '<table role="presentation" width="100%" style="background:#F8FAFC;padding:24px 0"><tr><td align="center">'
@@ -306,10 +308,15 @@ def _send_estimate_sms(estimate: "Estimate") -> None:
     from twilio.rest import Client
 
     twilio = Client(os.environ["TWILIO_ACCOUNT_SID"], os.environ["TWILIO_AUTH_TOKEN"])
+    extra = {}
+    if estimate.photos and APP_BASE_URL:
+        # MMS: attach the vehicle photos (Twilio accepts up to 10 media URLs)
+        extra["media_url"] = [f"{APP_BASE_URL}{p.url}" for p in estimate.photos[:10]]
     twilio.messages.create(
         to=NOTIFY_PHONE,
         from_=os.environ["TWILIO_FROM_NUMBER"],
         body=_estimate_sms_body(estimate),
+        **extra,
     )
 
 
