@@ -12,11 +12,9 @@ const CASE_MEDIA = [
     real: true,
   },
   {
-    before:
-      "https://images.unsplash.com/photo-1733928907064-6a92c9ce0e87?crop=entropy&cs=srgb&fm=jpg&w=1600&q=80&auto=format&ixlib=rb-4.1.0",
-    after:
-      "https://images.unsplash.com/photo-1733928907064-6a92c9ce0e87?crop=entropy&cs=srgb&fm=jpg&w=1600&q=80&auto=format&ixlib=rb-4.1.0",
-    real: false,
+    before: "/work/case3-before.webp",
+    after: "/work/case3-after.webp",
+    real: true,
   },
 ];
 

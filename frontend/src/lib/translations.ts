@@ -109,7 +109,7 @@ const en = {
   beforeAfter: {
     kicker: "Before & After",
     heading: "See the Difference a Proper Repair Makes",
-    sub: "Drag the slider to compare damage vs. finished repair. These sample cases show the kind of transformations we deliver every week.",
+    sub: "Drag the slider to compare the teardown with the finished repair — every case here is a real vehicle rebuilt and refinished at our shop.",
     caseTab: "Case",
     beforeLabel: "Before — Placeholder",
     afterLabel: "After — Placeholder",
@@ -141,12 +141,12 @@ const en = {
           "Complete black respray with fresh clear coat, machine cut and buff, then full reassembly — wheels, lights and trim back on.",
       },
       {
-        title: "Deep Scratch & Door Crease",
-        service: "Scratch Repair & Dent Removal",
+        title: "Chevy Suburban — Full Repaint",
+        service: "Automotive Painting & Color Refinish",
         damage:
-          "A deep scratch penetrating clear and base coat across the door, with a subtle crease in the metal beneath.",
+          "Full teardown and masking for a complete repaint — glass, trim and lights covered, panels prepped and sprayed in the booth.",
         repair:
-          "Dent manipulation, feather-edge micro-sanding, precision tinting, and a baked finish for an invisible repair.",
+          "Complete white respray with fresh clear coat, wet sand and machine polish, then full reassembly and a final detail.",
       },
     ],
   },
@@ -433,7 +433,7 @@ const es: Dict = {
   beforeAfter: {
     kicker: "Antes y Después",
     heading: "Vea la Diferencia que Hace una Reparación Bien Hecha",
-    sub: "Arrastre el control deslizante para comparar el daño con la reparación terminada. Estos casos de ejemplo muestran el tipo de transformaciones que entregamos cada semana.",
+    sub: "Arrastre el control deslizante para comparar el proceso con la reparación terminada — cada caso aquí es un vehículo real reconstruido y repintado en nuestro taller.",
     caseTab: "Caso",
     beforeLabel: "Antes — Ejemplo",
     afterLabel: "Después — Ejemplo",
@@ -465,12 +465,12 @@ const es: Dict = {
           "Repintado negro completo con capa transparente nueva, corte y pulido a máquina, y reensamblaje total — rines, luces y molduras instaladas.",
       },
       {
-        title: "Rayón Profundo y Pliegue en Puerta",
-        service: "Reparación de Rayones y Abolladuras",
+        title: "Chevy Suburban — Repintado Completo",
+        service: "Pintura Automotriz y Restauración de Color",
         damage:
-          "Un rayón profundo que penetra la capa transparente y la base a lo largo de la puerta, con un pliegue sutil en el metal.",
+          "Desarmado y enmascarado completo para un repintado total — vidrios, molduras y luces cubiertos, paneles preparados y pintados en cabina.",
         repair:
-          "Corrección de la abolladura, micro-lijado de bordes, tintado de precisión y curado al horno para una reparación invisible.",
+          "Repintado blanco completo con capa transparente nueva, lijado al agua y pulido a máquina, y reensamblaje total con detallado final.",
       },
     ],
   },
