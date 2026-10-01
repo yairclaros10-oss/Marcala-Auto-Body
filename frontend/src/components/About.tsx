@@ -2,8 +2,7 @@ import { BadgeCheck, HeartHandshake, MessageSquareText, Search } from "lucide-re
 import { BUSINESS } from "@/lib/site";
 import { useLang } from "@/lib/i18n";
 
-const ABOUT_IMAGE =
-  "https://images.unsplash.com/photo-1708805282706-f44730b7e527?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHw0fHxwb2xpc2hlZCUyMGx1eHVyeSUyMGNhciUyMHBhaW50JTIwZGV0YWlsJTIwc2hpbmV8ZW58MHx8fHwxNzkwNjA1Nzg4fDA&ixlib=rb-4.1.0&q=85";
+const ABOUT_IMAGE = "/work/about-painting.webp";
 
 const PILLAR_ICONS = [BadgeCheck, Search, MessageSquareText, HeartHandshake];
 
@@ -19,12 +18,9 @@ export default function About() {
             <img
               src={ABOUT_IMAGE}
               alt={t.about.imageAlt}
-              className="relative aspect-[4/3] w-full rounded-xl border border-white/10 object-cover"
+              className="relative aspect-[8/3] w-full rounded-xl border border-white/10 object-cover"
               loading="lazy"
             />
-            <p className="mt-3 text-center text-[11px] uppercase tracking-wider text-slate-500">
-              {t.about.imageCaption}
-            </p>
           </div>
           <div className="order-1 lg:order-2">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#F87171]">
