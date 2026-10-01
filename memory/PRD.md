@@ -45,6 +45,7 @@ Professional, modern website for Marcala Auto Body, an auto body & collision rep
 - About section image replaced with real shop photo (`public/work/about-painting.webp` — technician spraying red paint, logo watermark), displayed at natural 8:3 banner ratio; placeholder caption removed
 - Full-width shop banner added between the marquee and the Services ("What We Do") section: `public/work/banner-cap.webp` (Marcala cap on freshly painted red fender), 21:9 crop, both languages
 - Hero stock photo removed per owner request (2026-10-01): hero is now a text-first single-column layout, keeping the masked line reveal, CTAs and trust stats; unused parallax code removed
+- Social section added between Reviews and Estimate: Facebook (facebook.com/share/19yu1cYATQ/), Instagram (@marcalaauto_), TikTok (@marcala.auto.body) cards in EN/ES, plus matching icon row in the footer; links centralized in `SOCIAL_LINKS` in src/lib/site.ts
 - Publish attempt: blocked by balance — first deploy costs 50 ECUs/month, user balance was 40 ECUs; user to top up via Profile → Manage plan, then re-dispatch deploy (no charge consent flag) and connect marcala-auto-body.com via Manage Publishes → Domain tab
 
 ## Implemented (2026-10-01, part 2)

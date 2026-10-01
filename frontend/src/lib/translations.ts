@@ -317,6 +317,12 @@ const en = {
     copyright: "© {year} Marcala Auto Body, Charlotte, NC. All rights reserved.",
     placeholderNote: "Some site imagery is placeholder pending real shop photos.",
   },
+  social: {
+    kicker: "Follow Us",
+    heading: "Find Us on Social Media",
+    sub: "Behind-the-scenes repairs, fresh paint jobs, and shop updates — follow along.",
+    follow: "Follow",
+  },
   mobile: {
     call: "Call Shop",
     estimate: "Get Estimate",
@@ -641,6 +647,12 @@ const es: Dict = {
     contact: "Contacto",
     copyright: "© {year} Marcala Auto Body, Charlotte, NC. Todos los derechos reservados.",
     placeholderNote: "Algunas imágenes del sitio son de ejemplo en espera de fotos reales del taller.",
+  },
+  social: {
+    kicker: "Síguenos",
+    heading: "Encuéntrenos en Redes Sociales",
+    sub: "Reparaciones detrás de cámaras, trabajos de pintura recién terminados y novedades del taller — acompáñenos.",
+    follow: "Seguir",
   },
   mobile: {
     call: "Llamar",

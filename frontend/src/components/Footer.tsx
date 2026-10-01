@@ -1,5 +1,6 @@
-import { Mail, MapPin, Phone } from "lucide-react";
-import { BUSINESS, NAV_HREFS } from "@/lib/site";
+import { Facebook, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { BUSINESS, NAV_HREFS, SOCIAL_LINKS } from "@/lib/site";
+import { TikTokIcon } from "@/components/Social";
 import { useLang } from "@/lib/i18n";
 import { fill } from "@/lib/translations";
 
@@ -18,6 +19,38 @@ export default function Footer() {
             />
           </a>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-slate-400">{t.footer.tagline}</p>
+          <div className="mt-5 flex gap-3">
+            <a
+              href={SOCIAL_LINKS.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="footer-social-facebook"
+              aria-label="Marcala Auto Body on Facebook"
+              className="flex h-9 w-9 items-center justify-center rounded-md border border-white/10 text-slate-400 transition-colors hover:border-[#DC2626]/60 hover:text-[#F87171]"
+            >
+              <Facebook className="h-4 w-4" />
+            </a>
+            <a
+              href={SOCIAL_LINKS.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="footer-social-instagram"
+              aria-label="Marcala Auto Body on Instagram"
+              className="flex h-9 w-9 items-center justify-center rounded-md border border-white/10 text-slate-400 transition-colors hover:border-[#DC2626]/60 hover:text-[#F87171]"
+            >
+              <Instagram className="h-4 w-4" />
+            </a>
+            <a
+              href={SOCIAL_LINKS.tiktok}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="footer-social-tiktok"
+              aria-label="Marcala Auto Body on TikTok"
+              className="flex h-9 w-9 items-center justify-center rounded-md border border-white/10 text-slate-400 transition-colors hover:border-[#DC2626]/60 hover:text-[#F87171]"
+            >
+              <TikTokIcon className="h-4 w-4" />
+            </a>
+          </div>
         </div>
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">

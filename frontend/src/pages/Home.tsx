@@ -6,6 +6,7 @@ import BeforeAfter from "@/components/BeforeAfter";
 import About from "@/components/About";
 import Gallery from "@/components/Gallery";
 import Reviews from "@/components/Reviews";
+import Social from "@/components/Social";
 import EstimateForm from "@/components/EstimateForm";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -34,6 +35,7 @@ export default function Home() {
         <About />
         <Gallery />
         <Reviews />
+        <Social />
         <EstimateForm />
         <Contact />
       </main>

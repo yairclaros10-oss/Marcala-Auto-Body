@@ -27,4 +27,10 @@ export function isOpenNow(): boolean {
   return mins >= 9 * 60 && mins < close;
 }
 
+export const SOCIAL_LINKS = {
+  facebook: "https://www.facebook.com/share/19yu1cYATQ/",
+  tiktok: "https://www.tiktok.com/@marcala.auto.body",
+  instagram: "https://www.instagram.com/marcalaauto_/",
+};
+
 export const NAV_HREFS = ["#home", "#services", "#about", "#work", "#reviews", "#estimate", "#contact"];
