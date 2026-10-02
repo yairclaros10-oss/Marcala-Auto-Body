@@ -25,6 +25,11 @@ const WORK_IMAGES = [
   "/work/gallery-quarter-panel.jpg",
   "/work/gallery-booth-spray.webp",
   "/work/gallery-masking-prep.webp",
+  "/work/gallery-red-finished.jpg",
+  "/work/gallery-red-primer.jpg",
+  "/work/gallery-maskoff.jpg",
+  "/work/gallery-project-intake.jpg",
+  "/work/gallery-masked-sedan.webp",
 ];
 
 export default function Gallery() {

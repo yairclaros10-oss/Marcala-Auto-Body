@@ -200,7 +200,7 @@ const en = {
     kicker: "Our Work",
     heading: "Repairs & Paint Work From the Shop Floor",
     sub: "A look at the kind of work we do every day — collision rebuilds, refinishing, dent removal, and bumper repair.",
-    note: "Placeholder imagery — this gallery is ready for real photos of vehicles repaired at Marcala Auto Body and will be updated as shop photos become available.",
+    note: "Real shop photos are being added as they come in — images marked “Placeholder” are temporary until replaced with genuine Marcala Auto Body work.",
     placeholderBadge: "Placeholder",
     altSuffix: " (placeholder photo)",
     filters: {
@@ -222,6 +222,11 @@ const en = {
       { title: "Quarter Panel Body Work in Progress", category: "collision" },
       { title: "Full Respray in the Booth", category: "paint" },
       { title: "Prepping & Masking for Paint", category: "paint" },
+      { title: "Fresh Red Refinish — Wet Look", category: "paint" },
+      { title: "Sanded to Primer, Ready for Color", category: "paint" },
+      { title: "Full Mask-Off Before Refinish", category: "paint" },
+      { title: "New Collision Project Intake", category: "collision" },
+      { title: "Masked & Prepped for Paint", category: "paint" },
     ],
   },
   reviews: {
@@ -533,7 +538,7 @@ const es: Dict = {
     kicker: "Nuestro Trabajo",
     heading: "Reparaciones y Trabajos de Pintura del Taller",
     sub: "Un vistazo al tipo de trabajo que hacemos todos los días: reconstrucciones por colisión, repintados, remoción de abolladuras y reparación de defensas.",
-    note: "Imágenes de ejemplo — esta galería está lista para fotos reales de vehículos reparados en Marcala Auto Body y se actualizará cuando haya fotos del taller disponibles.",
+    note: "Se están agregando fotos reales del taller — las imágenes marcadas como “Ejemplo” son temporales hasta ser reemplazadas con trabajo real de Marcala Auto Body.",
     placeholderBadge: "Ejemplo",
     altSuffix: " (foto de ejemplo)",
     filters: {
@@ -555,6 +560,11 @@ const es: Dict = {
       { title: "Trabajo de Panel Lateral en Proceso", category: "collision" },
       { title: "Repintado Completo en Cabina", category: "paint" },
       { title: "Preparación y Enmascarado para Pintura", category: "paint" },
+      { title: "Acabado Rojo Brillante Recién Pintado", category: "paint" },
+      { title: "Lijado hasta el Primer, Listo para Color", category: "paint" },
+      { title: "Enmascarado Total Antes del Repintado", category: "paint" },
+      { title: "Recepción de Nuevo Proyecto de Colisión", category: "collision" },
+      { title: "Enmascarado y Preparado para Pintura", category: "paint" },
     ],
   },
   reviews: {
